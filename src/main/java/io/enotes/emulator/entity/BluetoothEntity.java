@@ -1,4 +1,4 @@
-package io.enotes.sdk.entity;
+package io.enotes.emulator.entity;
 
 public class BluetoothEntity {
 	private String name;

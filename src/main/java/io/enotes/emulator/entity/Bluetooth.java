@@ -1,4 +1,4 @@
-package io.enotes.sdk.entity;
+package io.enotes.emulator.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

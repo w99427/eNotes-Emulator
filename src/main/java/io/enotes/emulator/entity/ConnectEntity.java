@@ -1,4 +1,4 @@
-package io.enotes.sdk.entity;
+package io.enotes.emulator.entity;
 
 public class ConnectEntity {
 	public ConnectEntity(long id) {

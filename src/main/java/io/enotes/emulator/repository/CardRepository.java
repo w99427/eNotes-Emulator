@@ -1,8 +1,8 @@
-package io.enotes.sdk.repository;
+package io.enotes.emulator.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import io.enotes.sdk.entity.Card;
+import io.enotes.emulator.entity.Card;
 
 public interface CardRepository extends JpaRepository<Card, Long>{
 }

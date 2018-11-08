@@ -1,4 +1,4 @@
-package io.enotes.sdk.utils;
+package io.enotes.emulator.utils;
 
 import java.security.InvalidAlgorithmParameterException;
 import java.security.KeyPair;

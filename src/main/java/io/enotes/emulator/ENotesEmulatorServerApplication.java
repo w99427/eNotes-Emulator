@@ -1,4 +1,4 @@
-package io.enotes.sdk;
+package io.enotes.emulator;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -27,15 +27,15 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import io.enotes.sdk.entity.Bluetooth;
-import io.enotes.sdk.entity.Card;
-import io.enotes.sdk.repository.BluetoothRepository;
-import io.enotes.sdk.repository.CardRepository;
-import io.enotes.sdk.utils.ECKeyPairGenerator;
-import io.enotes.sdk.utils.SpongyCastleProvider;
+import io.enotes.emulator.entity.Bluetooth;
+import io.enotes.emulator.entity.Card;
+import io.enotes.emulator.repository.BluetoothRepository;
+import io.enotes.emulator.repository.CardRepository;
+import io.enotes.emulator.utils.ECKeyPairGenerator;
+import io.enotes.emulator.utils.SpongyCastleProvider;
 
 @SpringBootApplication
-public class ENotesSdkServerApplication implements CommandLineRunner {
+public class ENotesEmulatorServerApplication implements CommandLineRunner {
 	public static final String TEMP_UPLOAD_DIR=System.getProperty("user.dir")+"/temp/";
 	public static final String devicePri = "ef12e6b12e39fba849b0f9985641e72fac5734031d647887cc9e45381fbbd6c7";
 	private static final String devicePub = "04a6c9b8116ef8781fe9d9f1ff24a4a0b49794f61cc547a87dc7ec955a8c8c54b56c0ad70e189981843c9e7ac9e5024565668f032dd2a516cd3806f73ff781a5a5";
@@ -54,7 +54,7 @@ public class ENotesSdkServerApplication implements CommandLineRunner {
 	private CardRepository cardRepository;
 
 	public static void main(String[] args) {
-		SpringApplication.run(ENotesSdkServerApplication.class, args);
+		SpringApplication.run(ENotesEmulatorServerApplication.class, args);
 	}
 
 	@Override

@@ -1,4 +1,4 @@
-package io.enotes.sdk.entity;
+package io.enotes.emulator.entity;
 
 
 import java.io.IOException;
@@ -13,7 +13,7 @@ import org.spongycastle.asn1.DEROctetString;
 import org.spongycastle.asn1.DERPrintableString;
 import org.spongycastle.asn1.DLSequence;
 
-import io.enotes.sdk.utils.ByteUtil;
+import io.enotes.emulator.utils.ByteUtil;
 
 
 public class Cert {

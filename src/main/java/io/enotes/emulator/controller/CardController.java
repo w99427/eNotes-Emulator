@@ -1,4 +1,4 @@
-package io.enotes.sdk.controller;
+package io.enotes.emulator.controller;
 
 import java.math.BigInteger;
 import java.security.SecureRandom;
@@ -18,13 +18,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.enotes.sdk.ENotesSdkServerApplication;
-import io.enotes.sdk.entity.ApduEntity;
-import io.enotes.sdk.entity.Card;
-import io.enotes.sdk.entity.EnotesResponse;
-import io.enotes.sdk.repository.CardRepository;
-import io.enotes.sdk.utils.ByteUtil;
-import io.enotes.sdk.utils.TLVBox;
+import io.enotes.emulator.ENotesEmulatorServerApplication;
+import io.enotes.emulator.entity.ApduEntity;
+import io.enotes.emulator.entity.Card;
+import io.enotes.emulator.entity.EnotesResponse;
+import io.enotes.emulator.repository.CardRepository;
+import io.enotes.emulator.utils.ByteUtil;
+import io.enotes.emulator.utils.TLVBox;
 
 @RestController
 @RequestMapping("/sdk/card/")
@@ -67,7 +67,7 @@ public class CardController {
 			tlvBox.putBytesValue(TLVTag.Transaction_Signature_Counter, IntToByte(count));
 			apduEntity.setResult(ByteUtil.toHexString(tlvBox.serialize()) + "9000");
 		} else if (apdu.contains("0088520022")) {
-			signBySalt(ENotesSdkServerApplication.devicePri, apduEntity, apdu.substring("0088520022".length()));
+			signBySalt(ENotesEmulatorServerApplication.devicePri, apduEntity, apdu.substring("0088520022".length()));
 		} else if (apdu.contains("0088540022")) {
 			signBySalt(card.getPrivatekey(), apduEntity, apdu.substring("0088540022".length()));
 		} else if (apdu.contains("00A0540022")) {

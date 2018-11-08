@@ -1,4 +1,4 @@
-package io.enotes.sdk.controller;
+package io.enotes.emulator.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.enotes.sdk.entity.Bluetooth;
-import io.enotes.sdk.entity.BluetoothEntity;
-import io.enotes.sdk.entity.ConnectEntity;
-import io.enotes.sdk.entity.EnotesResponse;
-import io.enotes.sdk.repository.BluetoothRepository;
+import io.enotes.emulator.entity.Bluetooth;
+import io.enotes.emulator.entity.BluetoothEntity;
+import io.enotes.emulator.entity.ConnectEntity;
+import io.enotes.emulator.entity.EnotesResponse;
+import io.enotes.emulator.repository.BluetoothRepository;
 
 @RestController
 @RequestMapping("/sdk/bluetooth/")
