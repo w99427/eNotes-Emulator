@@ -119,8 +119,8 @@ public class ENotesEmulatorServerApplication implements CommandLineRunner {
 			System.out.println("publickey_compressed = " + ByteUtils.toHexString(pub.getEncoded(true)));
 		}
 
-		System.out.println("pubString = " + pubString);
-		System.out.println("priString = " + priString);
+//		System.out.println("pubString = " + pubString);
+//		System.out.println("priString = " + priString);
 		Card card = new Card();
 		card.setCert(certArr[i]);
 		card.setCount(0);
