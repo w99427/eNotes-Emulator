@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>eNotes</title>
+<style type="text/css">
+ul li {
+	display: flex;
+	margin: 15px 0;
+	align-items: center;
+	background-color: #848FA5;
+	background-image: url("banner.png");
+}
+
+ul li .li-left {
+	flex: 1 1 auto;
+}
+
+ul li .li-right {
+	flex: 0 0 auto;
+}
+</style>
+</head>
+<body>
+
+	<div class="context" th:if="${not #lists.isEmpty(certlist)}"
+		th:each="cert:${certlist}">
+		<ul>
+			<li>
+				<div class="li-left" style="margin-left: 10px">
+					<p th:text="' '+ ${cert.blockChain}"></p>
+					<p th:text="'VendorName: '+ ${cert.vendorName}"></p>
+					<p th:text="'FaceValue: ' + ${cert.coinDeno}"></p>
+					<p th:text="'SerialNumber: ' + ${cert.serialNumber}"></p>
+					<p th:text="'PublicKey: ' + ${cert.publicKey}"></p>
+				</div>
+				<div class="li-center" style="margin-right: 20px">
+					<button class="top"
+						th:onclick="'javascript:reset('+${cert.cardId}+')' " onmouseup=""
+						style="width: 100px; height: 50px">Reset</button>
+				</div>
+			</li>
+		</ul>
+	</div>
+
+</body>
+
+<script type="text/javascript">
+	function resetListener() {
+		var result = JSON.parse(this.responseText);
+		if (result.code == 0) {
+			alert("Reset Success!")
+		} else {
+			alert(this.responseText);
+		}
+	}
+
+	function reset(id) {
+		var url = "/sdk/card/reset?id=" + id
+		var request = new XMLHttpRequest();
+		request.addEventListener("load", resetListener);
+		request.open("GET", url);
+		request.send("")
+	}
+</script>
+</html>
